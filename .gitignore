@@ -1,0 +1,10 @@
+/node_modules
+.idea/.gitignore
+.idea/5DATA_API.iml
+.idea/inspectionProfiles/
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/runConfigurations/
+.idea/vcs.xml
+
