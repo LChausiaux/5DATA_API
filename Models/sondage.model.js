@@ -24,7 +24,7 @@ let Sondage = new Schema({
         type: String
     },
     mangerSurPlace: {
-        type: String
+        type: Boolean
     },
     nombreCredit: {
         type: Number
@@ -45,7 +45,7 @@ let Sondage = new Schema({
         type: Boolean
     },
     rattrapageParAn: {
-        type: String
+        type: Number
     },
 });
 

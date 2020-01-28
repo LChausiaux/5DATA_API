@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 
 
 router.get('/ects/campus', (req, res) => {
-    Sondages.find({}, 'nombreCrédit campus', (err, items) => {
+    Sondages.find({nombreCrédit: { $ne: 0 }}, 'nombreCrédit campus', (err, items) => {
         if (err)
             console.log(err);
         else
@@ -23,8 +23,8 @@ router.get('/ects/campus', (req, res) => {
     });
 });
 
-router.get('/ects/campus', (req, res) => {
-    Sondages.find({}, 'nombreCrédit visChezParent', (err, items) => {
+router.get('/ects/visChezParent', (req, res) => {
+    Sondages.find({nombreCrédit: { $ne: 0 }}, 'nombreCrédit visChezParent', (err, items) => {
         if (err)
             console.log(err);
         else
@@ -32,8 +32,8 @@ router.get('/ects/campus', (req, res) => {
     });
 });
 
-router.get('/ects/campus', (req, res) => {
-    Sondages.find({}, 'nombreCrédit diplomeAnterieur', (err, items) => {
+router.get('/ects/promo', (req, res) => {
+    Sondages.find({nombreCrédit: { $ne: 0 }}, 'nombreCrédit promo', (err, items) => {
         if (err)
             console.log(err);
         else
@@ -68,21 +68,14 @@ router.get('/rattrapageParAn/campus', (req, res) => {
     });
 });
 
-router.get('/raisonArret/campus', (req, res) => {
-    Sondages.find({}, 'raisonArret campus', (err, items) => {
+router.get('/raisonArret', (req, res) => {
+    Sondages.find({}, 'raisonArret', (err, items) => {
         if (err)
             console.log(err);
         else
+        {
             res.json(items);
-    });
-});
-
-router.get('/raisonArret/promo', (req, res) => {
-    Sondages.find({}, 'raisonArret promo', (err, items) => {
-        if (err)
-            console.log(err);
-        else
-            res.json(items);
+        }
     });
 });
 
