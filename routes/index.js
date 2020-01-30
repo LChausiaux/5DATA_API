@@ -151,4 +151,22 @@ router.get('/contratPro/promo', (req, res) => {
     });
 });
 
+router.get('/stage', (req, res) => {
+    Sondages.find({stage: { $ne: "" }}, 'stage', (err, items) => {
+        if (err)
+            console.log(err);
+        else
+            res.json(items);
+    });
+});
+
+router.get('/contratPro', (req, res) => {
+    Sondages.find({contratPro: { $ne: "" }}, 'contratPro', (err, items) => {
+        if (err)
+            console.log(err);
+        else
+            res.json(items);
+    });
+});
+
 module.exports = router;
